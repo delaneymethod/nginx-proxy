@@ -8,4 +8,6 @@ ADD nginx.conf /etc/nginx/
 
 ADD default /etc/nginx/sites-available/
 
+RUN ln -sf /dev/stdout /var/log/nginx/access.log && ln -sf /dev/stderr /var/log/nginx/error.log
+    
 CMD ["nginx"]
