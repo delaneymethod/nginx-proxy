@@ -2,13 +2,14 @@ server {
 	client_max_body_size 100m;
 	client_body_buffer_size 128k;
 	
-	listen ${APP_PORT};
+	listen 80 default_server;
+	listen [::]:80 default_server ipv6only=on;
 	
 	root /var/www/html/public;
 	
 	index index.php index.html index.htm;
 
-	server_name ${SERVER_NAME};
+	server_name _;
 	
 	charset utf-8;
 	
@@ -31,8 +32,6 @@ server {
 		fastcgi_buffers 256 16k;
 		fastcgi_busy_buffers_size 256k;
 		fastcgi_temp_file_write_size 256k;
-		
-		#fastcgi_pass unix:/run/php/php7.1-fpm.sock;
 		
 		# Point to our PHP FPM docker container.
 		fastcgi_pass phpfpm:9000;
