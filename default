@@ -24,6 +24,11 @@ server {
 		# include /etc/nginx/naxsi.rules
 	}
 	
+	location ^~ /.well-known/acme-challenge/ {
+		allow all;
+		root /var/www/html/public;
+	}
+	
 	location ~* (?:^|/)\. {
 		access_log off;
 		log_not_found off;
