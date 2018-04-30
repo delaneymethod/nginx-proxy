@@ -26,6 +26,7 @@ server {
 	
 	location ^~ /.well-known/acme-challenge/ {
 		allow all;
+		default_type "text/plain";
 		root /var/www/html/public;
 	}
 	
