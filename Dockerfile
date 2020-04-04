@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM ubuntu:18.04
 
 MAINTAINER Sean Delaney <hello@delaneymethod.com>
 
@@ -15,5 +15,5 @@ COPY nginx.conf /etc/nginx/
 COPY default /etc/nginx/sites-available/default
 
 RUN ln -sf /dev/stdout /var/log/nginx/access.log && ln -sf /dev/stderr /var/log/nginx/error.log
-    
+
 CMD ["nginx"]
