@@ -1,3 +1,3 @@
-# NGINX
+# NGINX Proxy
 
-A light-weight NGINX container for Docker.
+A light-weight NGINX Proxy container for Docker.
